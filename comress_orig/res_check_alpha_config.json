@@ -1,0 +1,10 @@
+{
+    "checkAlphaDir": [
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/"
+    ],
+    "checkAlphaFormat": [
+        ".png"
+    ], 
+    "checkAlphaIgnoreList": [],
+    "sizeScale": 20480
+}

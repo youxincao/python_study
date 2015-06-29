@@ -1,0 +1,12 @@
+{
+    "command": "D:/Tools/pngout/pngout.exe", 
+    "compressDir": [
+        "D:/Sina/test1_502"
+    ], 
+    "compressFormat": [
+        ".png"
+    ], 
+    "compressIgnorePattern": [
+        ".9."
+    ]
+}

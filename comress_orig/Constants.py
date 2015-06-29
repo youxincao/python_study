@@ -1,0 +1,6 @@
+COMPRESS_STATE_FILE = 'res_compress_state.json'
+COMPRESS_CONFIG_FILE = 'res_compress_config.json'
+CHECK_SIZE_CONFIG_FILE = 'res_check_size_config.json'
+CHECK_ALPHA_CONFIG_FILE = 'res_check_alpha_config.json'
+HAS_COMPRESSED = 'Chg:'
+CHECK_SIZE_FLODER_ROOT = 'weibo_dev_res'

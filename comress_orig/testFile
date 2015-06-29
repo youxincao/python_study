@@ -1,0 +1,20 @@
+{
+	"latestUpdateTime": 100,
+	"compressDir": "D:/Sina/pngout",
+	"command": "D:/Tools/pngout/pngout.exe",
+	"sizeScale": 500
+}
+
+# 命令行测试
+# command = PNGOUT_COMMAND +' '+ 'adward_background.png'
+# os.system(command)
+# os.popen('D:\Tools\pngout\pngout.exe new_feature.png').read()
+# os.popen('D:\Tools\pngout pngout.exe login_wallpaper1.png').read()
+# os.popen(r'"D:\Tools\pngout pngout.exe" adward_background.png')
+# print 'hello'
+#
+
+
+# checkConfig.sizeScale = 1000
+# checkConfig.latestUpdateTime = 500025
+# writeCheckConfig('res_check_config.json', checkConfig)

@@ -1,0 +1,69 @@
+# 遍历要扫描的文件夹s
+for BASE_DIR in BASE_DIR_S:
+    # 获取所有BASE_DIR下的所有文件
+    list = os.listdir(BASE_DIR)
+    # 文件名
+    filelist = []
+    # 绝对路径
+    filePathlist = []
+    for i in range(0, len(list)):
+        path = os.path.join(BASE_DIR, list[i])
+        if os.path.isfile(path):
+            filelist.append(list[i])
+            filePathlist.append(path)
+
+    for i in range(0, len(filelist)):
+        path = filePathlist[i]
+        # 过滤文件夹
+        if os.path.isdir(path):
+            continue
+
+        # 过滤文件类型
+        if not os.path.splitext(filelist[i])[1] in CONST_IMAGE_FORMAT:
+            continue
+
+        # 略过上次压缩到现在都没有修改过的文件
+        timestamp = os.path.getmtime(path)
+        # if timestamp <= LAST_UPDATE_TIME:
+        # print filelist[i],"HAS NOT UPDATE SINCE LAST_UPDATE_TIME"
+        #     continue
+
+        # 过滤关键字
+        skip = False
+        for ignore in COMPRESS_IGNORE_PATTERN:
+            if ignore in filelist[i]:
+                print "IGNORE:" + ignore + " in " + filelist[i] + " NO NEED TO COMPRESS"
+                skip = True
+        if skip:
+            continue
+
+        # 执行压缩命令
+        if filelist[i]:
+            try:
+                print 'IMAGE:', filelist[i]
+                command = PNGOUT_COMMAND + " " + filePathlist[i]
+                result = os.popen(command).read()
+
+                if Constants.HAS_COMPRESSED in result:
+                    # In:开头,有三个空格后跟着数字,到结尾前有任意字符，bytes结尾
+                    inSizeState = re.search(
+                        r'\bIn\b\:\s{3}\d+(.*?)bytes', result).group()
+                    print inSizeState
+
+                    # Chg:开头，后跟有任意字符，original)结尾
+                    chgSizeState = re.search(
+                        r'\bChg\b\:(.*?)original\)', result).group()
+                    print chgSizeState
+
+                    # chgSizeState中，"-"开头的数字，去除"-"到结尾(整个数字段)
+                    chgSize = re.search(r'\-\d+', chgSizeState).group()[1:]
+                    # 压缩计数器+1
+                    THIS_COMPRESSED_COUNT += 1
+                    # 压缩值累加
+                    THIS_COMPRESSED_SIZE += int(chgSize)
+                else:
+                    print "NO COMPRESSION"
+
+            except Exception, e:
+                print e
+                continue

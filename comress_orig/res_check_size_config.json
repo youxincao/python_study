@@ -1,0 +1,25 @@
+{
+    "checkSizeDir": [
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-640dpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-hdpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-ldpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-mdpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-sw400dp-xhdpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-sw432dp-400dpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-xhdpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/res/drawable-xxhdpi",
+        "D:/SVN/20150316weibo2/weibo_dev_res/assets"
+    ],
+    "checkSizeIgnoreList": [
+        "alipay.jar",
+        "boot.jar",
+        "thirdparty_openapi.jar",
+        "vcard.jar",
+        "wbc.jar",
+        "weiboad.jar",
+        "vpaser.jar"
+    ],
+    "sizeScaleNormal": 51200,
+    "sizeScale1": 102400,
+    "fileType1": [".zip"]
+}
